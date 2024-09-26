@@ -17,7 +17,7 @@ COPY . .
 RUN yarn build
 
 # Use a lightweight web server to serve the files
-FROM nginx:alpine
+FROM docker.io/library/nginx:alpine
 
 # Copy built files from the previous stage to nginx html directory
 COPY --from=build /app/dist /usr/share/nginx/html
